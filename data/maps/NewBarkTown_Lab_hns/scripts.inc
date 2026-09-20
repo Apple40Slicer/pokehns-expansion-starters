@@ -171,7 +171,7 @@ NewBarkTown_Lab_EventScript_ChikoritaBall::
 NewBarkTown_Lab_EventScript_ChikoritaBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 0
-	setvar PLAYER_STARTER_SPECIES, SPECIES_BULBASAUR
+	setvar PLAYER_STARTER_SPECIES, SPECIES_PIKACHU
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -193,7 +193,7 @@ NewBarkTown_Lab_EventScript_CyndaquilBall::
 NewBarkTown_Lab_EventScript_CyndaquilBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 1
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_SPECIES, SPECIES_EEVEE
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
@@ -215,7 +215,7 @@ NewBarkTown_Lab_EventScript_TotodileBall::
 NewBarkTown_Lab_EventScript_TotodileBall_Choice::
 	@callnative DisableStaticRandomizer
 	setvar VAR_STARTER_MON, 2
-	setvar PLAYER_STARTER_SPECIES, SPECIES_SQUIRTLE
+	setvar PLAYER_STARTER_SPECIES, SPECIES_CLEFAIRY
 	showmonpic PLAYER_STARTER_SPECIES, 10, 3
 	playmoncry PLAYER_STARTER_SPECIES, CRY_MODE_NORMAL
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
