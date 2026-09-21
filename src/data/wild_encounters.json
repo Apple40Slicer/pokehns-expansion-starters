@@ -68791,27 +68791,27 @@
               {
                 "min_level": 19,
                 "max_level": 26,
-                "species": "SPECIES_TEDDIURSA"
-              },
-              {
-                "min_level": 19,
-                "max_level": 26,
                 "species": "SPECIES_AIPOM"
               },
               {
                 "min_level": 19,
                 "max_level": 26,
-                "species": "SPECIES_TEDDIURSA"
-              },
-              {
-                "min_level": 19,
-                "max_level": 26,
-                "species": "SPECIES_AIPOM"
+                "species": "SPECIES_PHANPY"
               },
               {
                 "min_level": 19,
                 "max_level": 26,
                 "species": "SPECIES_TEDDIURSA"
+              },
+              {
+                "min_level": 19,
+                "max_level": 26,
+                "species": "SPECIES_DUNSPARCE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 26,
+                "species": "SPECIES_LARVITAR"
               }
             ]
           },
