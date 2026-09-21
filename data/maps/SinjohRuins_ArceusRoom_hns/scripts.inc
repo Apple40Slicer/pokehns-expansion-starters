@@ -320,6 +320,8 @@ SinjohRuins_ArceusRoom_EventScript_ArceusPhase2::
 	removeobject LOCALID_SINJOHRUINS_ARCEUSROOM_ARCEUS
 	setflag FLAG_HIDE_SINJOHRUINS_ARCEUSROOM_ARCEUS
 	clearflag FLAG_HIDE_DIALGA
+	clearflag FLAG_HIDE_PALKIA
+	clearflag FLAG_HIDE_GIRATINA
 	special GivePartyMonSkyRibbon
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
@@ -393,8 +395,30 @@ SinjohRuins_ArceusRoom_Text_StevenCongrats:
 	.string "Fufufu, what could you need from me?$"
 
 SinjohRuins_ArceusRoom_EventScript_Dialga::
+	msgbox SinjohRuins_ArceusRoom_FossilText_Dialga, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, SinjohRuins_ArceusRoom_EventScript_DialgaFight
+	case NO, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+	case MULTI_B_PRESSED, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+
+SinjohRuins_ArceusRoom_EventScript_Palkia::
+	msgbox SinjohRuins_ArceusRoom_FossilText_Palkia, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, SinjohRuins_ArceusRoom_EventScript_PalkiaFight
+	case NO, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+	case MULTI_B_PRESSED, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+
+SinjohRuins_ArceusRoom_EventScript_Giratina::
+	msgbox SinjohRuins_ArceusRoom_FossilText_Giratina, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, SinjohRuins_ArceusRoom_EventScript_GiratinaFight
+	case NO, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+	case MULTI_B_PRESSED, SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan
+
+SinjohRuins_ArceusRoom_EventScript_DialgaFight::
 	lock
-	faceplayer
+	msgbox SinjohRuins_ArceusRoom_InteractText_Dialga, MSGBOX_AUTOCLOSE
+	delay 60
 	playmoncry SPECIES_DIALGA, CRY_MODE_ENCOUNTER
 	msgbox SinjohRuins_ArceusRoom_Text_Dialga
 	delay 20
@@ -412,9 +436,10 @@ SinjohRuins_ArceusRoom_EventScript_Dialga::
 	release
 	end
 
-SinjohRuins_ArceusRoom_EventScript_Palkia::
+SinjohRuins_ArceusRoom_EventScript_PalkiaFight::
 	lock
-	faceplayer
+	msgbox SinjohRuins_ArceusRoom_InteractText_Palkia, MSGBOX_AUTOCLOSE
+	delay 60
 	playmoncry SPECIES_PALKIA, CRY_MODE_ENCOUNTER
 	msgbox SinjohRuins_ArceusRoom_Text_Palkia
 	delay 20
@@ -432,9 +457,10 @@ SinjohRuins_ArceusRoom_EventScript_Palkia::
 	release
 	end
 
-SinjohRuins_ArceusRoom_EventScript_Giratina::
+SinjohRuins_ArceusRoom_EventScript_GiratinaFight::
 	lock
-	faceplayer
+	msgbox SinjohRuins_ArceusRoom_InteractText_Giratina, MSGBOX_AUTOCLOSE
+	delay 60
 	playmoncry SPECIES_GIRATINA_ORIGIN, CRY_MODE_ENCOUNTER
 	msgbox SinjohRuins_ArceusRoom_Text_Giratina
 	delay 20
@@ -454,6 +480,30 @@ SinjohRuins_ArceusRoom_EventScript_Giratina::
 SinjohRuins_ArceusRoom_EventScript_PlayerOrCreationTrioRan::
 	release
 	end
+
+SinjohRuins_ArceusRoom_FossilText_Dialga:
+	.string "A shard of Arceus, distorting\n"
+	.string "time around it.\p"
+	.string "Touch the stone?$"
+
+SinjohRuins_ArceusRoom_FossilText_Palkia:
+	.string "A shard of Arceus, distorting\n"
+	.string "space around it.\p"
+	.string "Touch the stone?$"
+
+SinjohRuins_ArceusRoom_FossilText_Giratina:
+	.string "A shard of Arceus, distorting\n"
+	.string "existence around it.\p"
+	.string "Touch the stone?$"
+
+SinjohRuins_ArceusRoom_InteractText_Dialga:
+	.string "You reach out across time.$"
+
+SinjohRuins_ArceusRoom_InteractText_Palkia:
+	.string "You reach out across space.$"
+
+SinjohRuins_ArceusRoom_InteractText_Giratina:
+	.string "You reach into the void.$"
 
 SinjohRuins_ArceusRoom_Text_Dialga:
 	.string "Gugyugubah!$"

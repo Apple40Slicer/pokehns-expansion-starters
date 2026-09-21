@@ -1,11 +1,9 @@
 NationalPark_Meadow_hns_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, NationalPark_Meadow_EventScript_GracideaCheck
+	map_script MAP_SCRIPT_ON_TRANSITION, NationalPark_Meadow_EventScript_SinjohCheck
 	.byte 0
 
-NationalPark_Meadow_EventScript_GracideaCheck::
-	checkitem ITEM_GRACIDEA
-	goto_if_eq VAR_RESULT, FALSE, NationalPark_Meadow_EventScript_NoGracidea
-	goto_if_eq VAR_RESULT, TRUE, NationalPark_Meadow_EventScript_PlayerOrShayminRan
+NationalPark_Meadow_EventScript_SinjohCheck::
+	goto_if_unset FLAG_VISITED_NEW_SINJOH, NationalPark_Meadow_EventScript_NotReachedSinjoh
 	release
 	end
 
@@ -32,7 +30,7 @@ NationalPark_Meadow_EventScript_PlayerOrShayminRan::
 	release
 	end
 
-NationalPark_Meadow_EventScript_NoGracidea::
+NationalPark_Meadow_EventScript_NotReachedSinjoh::
 	removeobject LOCALID_NATIONALPARKMEADOW_SHAYMIN
 	setflag FLAG_HIDE_SHAYMIN
 	release
