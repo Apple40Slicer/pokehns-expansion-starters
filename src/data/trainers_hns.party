@@ -9436,7 +9436,7 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
 
-Mareep
+Treecko
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9467,13 +9467,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Screech
 - Sandstorm
 
-Flaaffy
+Grovyle
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thunder Shock
-- Growl
-- Thunder Wave
-- Cotton Spore
+- Mega Drain
+- Leer
+- Pursuit
+- Rock Tomb
 
 === TRAINER_RIVAL_CHIKORITA_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9510,12 +9510,12 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
 - Air Cutter
 
-Flaaffy
+Grovyle
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Reflect
-- Thunderbolt
-- Take Down
+- Leaf Blade
+- Rock Tomb
+- Double Team
 - Brick Break
 
 === TRAINER_RIVAL_CHIKORITA_4_HNS ===
@@ -9561,12 +9561,12 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Air Cutter
 
-Ampharos
+Sceptile
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Reflect
-- Fire Punch
-- Thunderbolt
+- Leaf Blade
+- Detect
+- Rock Slide
 - Brick Break
 
 === TRAINER_RIVAL_CHIKORITA_5_HNS ===
@@ -9601,7 +9601,7 @@ Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Surf
 - Ice Beam
-- Rain Dance
+- Psybeam
 - Signal Beam
 
 Houndoom
@@ -9612,13 +9612,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Crunch
 - Sunny Day
 
-Ampharos @ Magnet
+Sceptile @ Miracle Seed
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Reflect
-- Brick Break
-- Thunder
-- Dragon Pulse
+- Leaf Blade
+- Dragon Claw
+- Rock Slide
+- Detect
 
 Tyranitar
 Level: 48
@@ -9660,7 +9660,7 @@ Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
-- Rain Dance
+- Psybeam
 - Signal Beam
 
 Houndoom @ Charcoal
@@ -9671,13 +9671,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Sunny Day
 
-Ampharos @ Magnet
+Sceptile @ Miracle Seed
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Thunder
-- Signal Beam
-- Brick Break
+- Leaf Storm
+- X-Scissor
+- Rock Slide
+- Aerial Ace
 
 Tyranitar @ Quick Claw
 Level: 64
@@ -9730,13 +9730,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Sunny Day
 
-Ampharos @ King's Rock
+Sceptile @ Miracle Seed
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Reflect
-- Thunder
-- Dazzling Gleam
-- Giga Impact
+- Leaf Storm
+- X-Scissor
+- Rock Slide
+- Aerial Ace
 
 Tyranitar @ Quick Claw
 Level: 68
@@ -9756,7 +9756,7 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
 
-Swinub
+Torchic
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9787,13 +9787,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Screech
 - Sandstorm
 
-Swinub
+Combusken
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ice Ball
-- Mud Bomb
-- Tackle
-- Endure
+- Peck
+- Ember
+- Growl
+- Double Kick
 
 === TRAINER_RIVAL_CYNDAQUIL_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9830,13 +9830,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
 - Air Cutter
 
-Swinub
+Combusken
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Ice Shard
-- Mud Bomb
-- Body Slam
-- Light Screen
+- Flame Charge
+- Double Kick
+- Thunder Punch
+- Bulk Up
 
 === TRAINER_RIVAL_CYNDAQUIL_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9881,13 +9881,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Air Cutter
 
-Piloswine
+Blaziken
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Take Down
-- Ice Fang
-- Earthquake
-- Light Screen
+- Blaze Kick
+- Double Kick
+- Thunder Punch
+- Bulk Up
 
 === TRAINER_RIVAL_CYNDAQUIL_5_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9932,13 +9932,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sleep Powder
 - Growth
 
-Mamoswine @ Never Melt Ice
+Blaziken @ Charcoal
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Icicle Spear
-- Earthquake
-- Ancient Power
-- Light Screen
+- Blaze Kick
+- Double Kick
+- Thunder Punch
+- Bulk Up
 
 Tyranitar
 Level: 48
@@ -9991,13 +9991,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
 - Growth
 
-Mamoswine @ Never Melt Ice
+Blaziken @ Charcoal
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
-- Earthquake
-- Ancient Power
-- Thrash
+- Flare Blitz
+- Sky Uppercut
+- Thunder Punch
+- Swords Dance
 
 Tyranitar @ Quick Claw
 Level: 64
@@ -10050,13 +10050,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
 - Growth
 
-Mamoswine @ Soft Sand
+Blaziken @ Charcoal
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thrash
-- Blizzard
-- Earthquake
-- Stone Edge
+- Flare Blitz
+- Sky Uppercut
+- Thunder Punch
+- Swords Dance
 
 Tyranitar @ Quick Claw
 Level: 68
@@ -10076,7 +10076,7 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Dark Red
 
-Togepi
+Mudkip
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10107,13 +10107,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Screech
 - Sandstorm
 
-Togepi
+Marshtomp
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Headbutt
-- Metronome
+- Tackle
+- Water Gun
 - Growl
-- Draining Kiss
+- Mud Shot
 
 === TRAINER_RIVAL_TOTODILE_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10150,13 +10150,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
 - Air Cutter
 
-Togetic
+Marshtomp
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Wing Attack
-- Draining Kiss
-- Brick Break
-- Magical Leaf
+- Mud Bomb
+- Water Pulse
+- Headbutt
+- Growl
 
 === TRAINER_RIVAL_TOTODILE_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10201,13 +10201,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Air Cutter
 
-Togetic
+Swampert
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Draining Kiss
-- Aerial Ace
-- Flamethrower
-- Light Screen
+- Muddy Water
+- Ice Beam
+- Mud Bomb
+- Rock Slide
 
 === TRAINER_RIVAL_TOTODILE_5_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10252,13 +10252,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Crunch
 - Double Team
 
-Togetic @ Miracle Seed
+Swampert @ Mystic Water
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dazzling Gleam
-- Light Screen
-- Aerial Ace
-- Grass Knot
+- Muddy Water
+- Ice Beam
+- Earthquake
+- Rock Slide
 
 Tyranitar
 Level: 48
@@ -10311,13 +10311,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Double Team
 
-Togekiss @ Miracle Seed
+Swampert @ Mystic Water
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Moonblast
-- Aerial Ace
-- Light Screen
-- Grass Knot
+- Surf
+- Earthquake
+- Ice Beam
+- Rock Slide
 
 Tyranitar @ Quick Claw
 Level: 64
@@ -10370,13 +10370,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Double Team
 
-Togekiss @ Scope Lens
+Swampert @ Scope Lens
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Moonblast
-- Aerial Ace
-- Flamethrower
-- Last Resort
+- Wave Crash
+- Blizzard
+- Earthquake
+- Stone Edge
 
 Tyranitar @ Quick Claw
 Level: 68
