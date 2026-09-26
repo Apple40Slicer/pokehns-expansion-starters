@@ -1,5 +1,7 @@
 enum
 {
+    PAGE_LC_TITLE,
+    PAGE_LC_DIRECTOR,
     PAGE_HNS_TITLE,
     PAGE_HNS_DIRECTOR,
     PAGE_HNS_DEVS,
@@ -8,7 +10,6 @@ enum
     PAGE_HNS_SPRITES_1,
     PAGE_HNS_SPRITES_2,
     PAGE_HNS_SPRITES_3,
-    PAGE_HNS_SPRITES_4,
     PAGE_HNS_TILESETS_1,
     PAGE_HNS_TILESETS_2,
     PAGE_HNS_TILESETS_3,
@@ -70,6 +71,7 @@ enum
 // Category headers
 
 static const u8 sCreditsText_EmptyString[]                     = _("");
+static const u8 sCreditsText_PkmnLC[]                          = _("POKéMON LUCENT CRYSTAL");
 static const u8 sCreditsText_PkmnHnS[]                         = _("POKéMON HEART & SOUL");
 static const u8 sCreditsText_LeadDeveloper[]                   = _("Lead Developer");
 static const u8 sCreditsText_LilDill[]                         = _("LIL DILL");
@@ -448,6 +450,7 @@ static const u8 sCreditsText_ShellieDow[]                     = _("Shellie Dow")
 static const u8 sCreditsText_ErikJohnson[]                    = _("Erik Johnson");
 
 // Title and header
+static const struct CreditsEntry sCreditsEntry_PkmnLC                           = {7,  TRUE, sCreditsText_PkmnLC};
 static const struct CreditsEntry sCreditsEntry_PkmnHnS                           = {7,  TRUE, sCreditsText_PkmnHnS};
 static const struct CreditsEntry sCreditsEntry_Credits                          = {11,  TRUE, sCreditsText_Credits};
 
@@ -712,6 +715,20 @@ static const struct CreditsEntry sCreditsEntry_ErikJohnson                      
 #define _ &sCreditsEntry_EmptyString
 static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][ENTRIES_PER_PAGE] =
 {
+    [PAGE_LC_TITLE] = {
+        _,
+        &sCreditsEntry_PkmnLC,
+        &sCreditsEntry_Credits,
+        _,
+        _,
+    },
+    [PAGE_LC_DIRECTOR] = {
+        _,
+        &sCreditsEntry_LeadDeveloper,
+        &sCreditsEntry_Nettorizo,
+        _,
+        _,
+    },
     [PAGE_HNS_TITLE] = {
         _,
         &sCreditsEntry_PkmnHnS,
@@ -766,14 +783,7 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Sprites,
         &sCreditsEntry_Beliot419,
         &sCreditsEntry_shiningstar5022,
-        &sCreditsEntry_Nettorizo,
-    },
-    [PAGE_HNS_SPRITES_4] = {
-        &sCreditsEntry_Assets,
-        &sCreditsEntry_Sprites,
         &sCreditsEntry_Stellaria,
-        _,
-        _,
     },
     [PAGE_HNS_TILESETS_1] = {
         &sCreditsEntry_Assets,
