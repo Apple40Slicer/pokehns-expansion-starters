@@ -439,7 +439,23 @@ const struct RideablePokemon gSurfablePokemon[] =
         .trainerPose = 0,
     },
     {
+        .species = SPECIES_PIPLUP,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_PRINPLUP,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_EMPOLEON,
+        .trainerPose = 0,
+    },
+    {
         .species = SPECIES_BIBAREL,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_RAMPARDOS,
         .trainerPose = 0,
     },
     {
@@ -496,6 +512,18 @@ const struct RideablePokemon gSurfablePokemon[] =
     },
     {
         .species = SPECIES_RHYPERIOR,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_PALKIA,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_PHIONE,
+        .trainerPose = 0,
+    },
+    {
+        .species = SPECIES_MANAPHY,
         .trainerPose = 0,
     },
     {
