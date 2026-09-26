@@ -2402,5 +2402,6 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/AbandonedHouse_Dream_hns/scripts.inc"
 	.include "data/maps/AbandonedHouse_Nightmare_hns/scripts.inc"
 	.include "data/maps/LakeOfRageLowTide_Cave_hns/scripts.inc"
+	.include "data/maps/MtMortar_B2F_hns/scripts.inc"
 
 .endif
