@@ -16007,55 +16007,56 @@ Name: CYNTHIA
 Class: Pkmn Trainer 1 Hns
 Pic: Pike Queen Lucy
 Gender: Female
-Music: Male
+Music: Hg Champion
 Double Battle: No
 AI: Smart Trainer / Prediction
 Items: Full Restore / Full Restore
+Mugshot: Purple
 
-Spiritomb @ Clear Amulet 
+Spiritomb @ Sitrus Berry
 Ability: Pressure
-Level: 74
+Level: 84
 - Dark Pulse
-- Silver Wind 
-- Psychic 
-- Ominous Wind
+- Shadow Ball
+- Will-O-Wisp
+- Sucker Punch
 
-Roserade @ Miracle Seed
-Ability: Natural Cure
-Level: 74
-- Energy Ball
+Roserade @ Expert Belt
+Ability: Poison Point
+Level: 85
+- Dazzling Gleam
 - Sludge Bomb 
 - Shadow Ball 
-- Extrasensory
+- Energy Ball
 
-Togekiss  
-Ability: Hustle
-Level: 76 
+Togekiss @ Leftovers 
+Ability: Serene Grace
+Level: 86 
 - Air Slash 
 - Aura Sphere 
 - Moonblast
-- Psychic
+- Thunder Wave
 
-Lucario @ King's Rock
-Ability: Steadfast
-Level: 76   
-- Aura Sphere  
-- Dragon Pulse
-- Psychic  
+Lucario @ Focus Sash
+Ability: Inner Focus
+Level: 86   
+- Close Combat  
+- Meteor Mash
+- Extreme Speed
 - Earthquake
 
-Milotic @ Leftovers  
+Milotic @ Flame Orb 
 Ability: Marvel Scale
-Level: 74
-- Surf  
+Level: 84
+- Scald  
 - Ice Beam
 - Mirror Coat
-- Aqua Ring 
+- Recover
 
-Garchomp @ Sitrus Berry  
-Ability: Sand Veil
-Level: 78  
-- Dragon Rush
+Garchomp @ Yache Berry  
+Ability: Rough Skin
+Level: 88  
+- Dragon Claw
 - Earthquake  
-- Brick Break
-- Giga Impact
+- Swords Dance
+- Poison Jab
