@@ -202,6 +202,7 @@ NewSinjoh_HauntedHouse_Text_Log3:
 NewSinjoh_HauntedHouse_EventScript_CynthiaStatus::
     goto_if_not_defeated TRAINER_CYNTHIA_HNS, NewSinjoh_HauntedHouse_EventScript_Cynthia //Pretty simple, if undefeated Cynthia will introduce herself.
     goto_if_unset FLAG_CYNTHIA_MASTERBALL, NewSinjoh_HauntedHouse_EventScript_CynthiaBeat //If the above is NOT true, and the Master Ball was not given, go to the script that gives the Master Ball.
+    goto_if_ge VAR_SINJOH_STORYLINE, 14, NewSinjoh_HauntedHouse_EventScript_CynthiaRematch
     end //If the above are NOT true, do nothing.
 
 NewSinjoh_HauntedHouse_EventScript_Cynthia::
@@ -227,6 +228,7 @@ NewSinjoh_HauntedHouse_Movement_CynthiaWalkDown:
     step_end
 
 NewSinjoh_HauntedHouse_Text_CynthiaMeeting2:
+	.string "Such determined eyes...\n"
 	.string "What's your name?\p"
     .string "...\p"
     .string "Yes, I'll remember that!\n"
@@ -360,4 +362,33 @@ NewSinjoh_HauntedHouse_Text_CynthiaAfterItem6:
     .string "coming here.\p"
     .string "It would make me happy\n"
     .string "if I were to see you again.$"
+
+NewSinjoh_HauntedHouse_EventScript_CynthiaRematch::
+    lock
+    faceplayer
+    msgbox NewSinjoh_HauntedHouse_Text_RematchCynthiaRequest, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, FALSE, NewSinjoh_HauntedHouse_EventScript_RematchCynthiaDeclined
+    call NewSinjoh_HauntedHouse_EventScript_CynthiaRematchBattle
+
+NewSinjoh_HauntedHouse_Text_RematchCynthiaRequest:
+    .string "Hello, {PLAYER}!\p"
+    .string "This house is certainly an\n"
+    .string "interesting place to stay\l"
+    .string "all things considered.\p"
+    .string "Fufufufu...\p"
+    .string "Do you wish to live it up\n"
+    .string "with a rematch?$"
+
+NewSinjoh_HauntedHouse_EventScript_RematchCynthiaDeclined:
+    closemessage
+	release
+	end
+
+NewSinjoh_HauntedHouse_EventScript_CynthiaRematchBattle::
+    trainerbattle_no_intro TRAINER_CYNTHIA_HNS, NewSinjoh_HauntedHouse_Text_CynthiaDefeat
+	givebp 10
+    msgbox BattleFrontier_Text_ObtainedXBattlePoints, MSGBOX_DEFAULT
+    closemessage
+	release
+	end
 
