@@ -208,19 +208,14 @@ NewSinjoh_HauntedHouse_EventScript_Cynthia::
     lock
     playse SE_PIN
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, Common_Movement_ExclamationMark
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting1, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaWalkDown
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting2, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceRight
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting3, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting4, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, FALSE, NewSinjoh_HauntedHouse_EventScript_ChallengeCynthia_Declined
-    closemessage
     call NewSinjoh_HauntedHouse_EventScript_CynthiaBattle
 
 NewSinjoh_HauntedHouse_Text_CynthiaMeeting1:
@@ -265,15 +260,16 @@ NewSinjoh_HauntedHouse_Text_CynthiaMeeting4:
 	.string "Would you care to be my opponent?$"
 
 NewSinjoh_HauntedHouse_EventScript_ChallengeCynthia_Declined:
-    closemessage
-    waitmovement 0
+	closemessage
+	delay 30
+    warp MAP_NEW_SINJOH_HNS, 2
+	waitstate
 	release
 	end
 
 NewSinjoh_HauntedHouse_EventScript_CynthiaBattle::
     msgbox NewSinjoh_HauntedHouse_Text_ChallengeCynthia, MSGBOX_DEFAULT
     trainerbattle_no_intro TRAINER_CYNTHIA_HNS, NewSinjoh_HauntedHouse_Text_CynthiaDefeat
-    release
     end
 
 NewSinjoh_HauntedHouse_Text_ChallengeCynthia:
@@ -292,22 +288,16 @@ NewSinjoh_HauntedHouse_EventScript_CynthiaBeat::
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem1, MSGBOX_DEFAULT
     playse SE_PIN
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, Common_Movement_ExclamationMark
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem2, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceRight
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem3, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem4, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaMoveUp
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem5, MSGBOX_DEFAULT
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
-    waitmovement 0
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem6, MSGBOX_DEFAULT
-    closemessage
-    waitmovement 0
+    setvar VAR_SINJOH_STORYLINE, 14
     release
     end
 
@@ -330,14 +320,14 @@ NewSinjoh_HauntedHouse_Text_CynthiaAfterItem2:
     .string "thinking out loud.$"
 
 NewSinjoh_HauntedHouse_Text_CynthiaAfterItem3:
-    .string "No... to tell the truth,\n"
-    .string "I am familiar with the\l"
+    .string "No... to be honest, I am\n"
+    .string "familiar with the\l"
     .string "KIMONO GIRLS of NEW SINJOH.$"
 
 NewSinjoh_HauntedHouse_Text_CynthiaAfterItem4:
     .string "I've heard how STEVEN and\n"
     .string "DEVON CORP were not going\l"
-    .string "to be enough in handling the\l"
+    .string "to be able to handle the\l"
     .string "disaster coming in this small\l"
     .string "but beautiful town.\p"
     .string "I have to agree.\p"
