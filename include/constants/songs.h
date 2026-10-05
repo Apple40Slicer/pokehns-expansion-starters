@@ -687,7 +687,8 @@
 #define MUS_DP_LEGEND_APPEARS        (DP_MUSIC_START + 0x09)  // A Legend Appears!
 #define MUS_DP_STARK_MOUNTAIN        (DP_MUSIC_START + 0x0A)  // Stark Mountain
 #define MUS_DP_VS_CHAMPION           (DP_MUSIC_START + 0x0B)  // Vs Champion
-#define DP_MUSIC_END                 MUS_DP_VS_CHAMPION
+#define MUS_DP_ENCOUNTER_CHAMPION    (DP_MUSIC_START + 0x0C)  // Encounter Champion
+#define DP_MUSIC_END                 MUS_DP_ENCOUNTER_CHAMPION
 
 #define END_MUS                      DP_MUSIC_END
 

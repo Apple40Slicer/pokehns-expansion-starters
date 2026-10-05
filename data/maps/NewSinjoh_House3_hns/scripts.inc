@@ -207,14 +207,22 @@ NewSinjoh_HauntedHouse_EventScript_CynthiaStatus::
 
 NewSinjoh_HauntedHouse_EventScript_Cynthia::
     lock
+    playbgm MUS_DP_ENCOUNTER_CHAMPION, FALSE
     playse SE_PIN
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, Common_Movement_ExclamationMark
+    delay 30
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting1, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaWalkDown
+    delay 30
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting2, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceRight
+    delay 20
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting3, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
+    delay 20
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaMeeting4, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, FALSE, NewSinjoh_HauntedHouse_EventScript_ChallengeCynthia_Declined
     call NewSinjoh_HauntedHouse_EventScript_CynthiaBattle
@@ -284,22 +292,34 @@ NewSinjoh_HauntedHouse_Text_ChallengeCynthia:
     .string "What are you?$"
 
 NewSinjoh_HauntedHouse_EventScript_CynthiaBeat::
+    playbgm MUS_DP_ENCOUNTER_CHAMPION, FALSE
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterBattle, MSGBOX_DEFAULT
     giveitem ITEM_MASTER_BALL
     setflag FLAG_CYNTHIA_MASTERBALL //This needs to be defined or she will give out infinite Master Balls.
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem1, MSGBOX_DEFAULT
+    closemessage
     playse SE_PIN
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, Common_Movement_ExclamationMark
+    delay 30
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem2, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceRight
+    delay 20
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem3, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
+    delay 20
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem4, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaMoveUp
+    delay 30
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem5, MSGBOX_DEFAULT
+    closemessage
     applymovement2 LOCALID_NEWSINJOH_HOUSE3_CYNTHIA, NewSinjoh_HauntedHouse_Movement_CynthiaFaceDown
+    delay 20
     msgbox NewSinjoh_HauntedHouse_Text_CynthiaAfterItem6, MSGBOX_DEFAULT
     setvar VAR_SINJOH_STORYLINE, 14
+    fadedefaultbgm
     release
     end
 
@@ -358,35 +378,37 @@ NewSinjoh_HauntedHouse_Text_CynthiaAfterItem6:
     .string "You have proven yourself\n"
     .string "to be a great trainer and\l"
     .string "I can tell you have\l"
-    .string "experienced so much before\l"
-    .string "coming here.\p"
+    .string "experienced so much\l"
+    .string "before coming here.\p"
     .string "It would make me happy\n"
     .string "if I were to see you again.$"
 
 NewSinjoh_HauntedHouse_EventScript_CynthiaRematch::
     lock
+    playbgm MUS_DP_ENCOUNTER_CHAMPION, FALSE
     faceplayer
     msgbox NewSinjoh_HauntedHouse_Text_RematchCynthiaRequest, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, FALSE, NewSinjoh_HauntedHouse_EventScript_RematchCynthiaDeclined
     call NewSinjoh_HauntedHouse_EventScript_CynthiaRematchBattle
 
 NewSinjoh_HauntedHouse_Text_RematchCynthiaRequest:
-    .string "Hello, {PLAYER}!\p"
+    .string "CYNTHIA: Hello, {PLAYER}!\p"
     .string "This house is certainly an\n"
     .string "interesting place to stay\l"
     .string "all things considered.\p"
     .string "Fufufufu...\p"
-    .string "Do you wish to live it up\n"
-    .string "with a rematch?$"
+    .string "Do you wanna to live it\n"
+    .string "up with a rematch?$"
 
 NewSinjoh_HauntedHouse_EventScript_RematchCynthiaDeclined:
     closemessage
+    fadedefaultbgm
 	release
 	end
 
 NewSinjoh_HauntedHouse_EventScript_CynthiaRematchBattle::
     trainerbattle_no_intro TRAINER_CYNTHIA_HNS, NewSinjoh_HauntedHouse_Text_CynthiaDefeat
-	givebp 10
+	givebp 50
     msgbox BattleFrontier_Text_ObtainedXBattlePoints, MSGBOX_DEFAULT
     closemessage
 	release
