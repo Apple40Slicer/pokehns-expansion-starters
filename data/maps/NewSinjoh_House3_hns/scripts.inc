@@ -397,7 +397,7 @@ NewSinjoh_HauntedHouse_Text_RematchCynthiaRequest:
     .string "interesting place to stay\l"
     .string "all things considered.\p"
     .string "Fufufufu...\p"
-    .string "Do you wanna to live it\n"
+    .string "Do you wanna live it\n"
     .string "up with a rematch?$"
 
 NewSinjoh_HauntedHouse_EventScript_RematchCynthiaDeclined:
