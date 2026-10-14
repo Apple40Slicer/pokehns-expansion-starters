@@ -197,9 +197,9 @@ CeruleanCave3_EventScript_LeafAfterEevee::
 
 CeruleanCave3_Text_LeafEevee1:
 	.string "You know.\p"
-	.string "It's not just being the\n"
-	.string "KANTO CHAMPION that I'm seeing.\p"
-	.string "You're kind of like those two.\p"
+	.string "I don't think you're just some\n"
+	.string "trainer who became KANTO CHAMPION.\p"
+	.string "You remind me of those two.\p"
 	.string "They were always neck-and-neck\n"
 	.string "with each other, trying to see\l"
 	.string "who's the better trainer.\p"
