@@ -32,7 +32,7 @@ CeruleanCave3_EventScript_UltraBall::
 
 CeruleanCave3_EventScript_LeafStatus::
     goto_if_not_defeated TRAINER_LEAF_HNS, CeruleanCave3_EventScript_Leaf //Pretty simple, if undefeated Leaf will introduce herself.
-	goto_if_unset TRAINER_LEAF_HNS, CeruleanCave3_EventScript_LeafBeat
+	goto_if_unset TRAINER_LEAF_HNS, CeruleanCave3_EventScript_LeafRematch //Also simple, if defeated Leaf will request a rematch.
     end //If the above are NOT true, do nothing.
 
 CeruleanCave3_EventScript_Leaf::
@@ -53,29 +53,33 @@ CeruleanCave3_EventScript_Leaf::
 	delay 20
 	msgbox CeruleanCave3_Text_LeafMeeting2, MSGBOX_DEFAULT
 	closemessage
-    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceUp
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceAway
 	delay 20
 	msgbox CeruleanCave3_Text_LeafMeeting3, MSGBOX_DEFAULT
 	closemessage
-	faceplayer
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFacePlayer
 	delay 20
 	msgbox CeruleanCave3_Text_LeafMeeting4, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceUp
+	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceAway
 	delay 20
 	msgbox CeruleanCave3_Text_LeafMeeting5, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
 	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, Common_Movement_ExclamationMark
 	delay 20
-	faceplayer
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFacePlayer
 	msgbox CeruleanCave3_Text_LeafMeeting6, MSGBOX_DEFAULT
 	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, FALSE
 	msgbox CeruleanCave3_Text_LeafMeeting7, MSGBOX_DEFAULT
 	call CeruleanCave3_EventScript_LeafBattle
 
-CeruleanCave3_Movement_LeafFaceUp:
-	face_up
+CeruleanCave3_Movement_LeafFaceAway:
+	face_away_player
+	step_end
+
+CeruleanCave3_Movement_LeafFacePlayer:
+	face_player
 	step_end
 
 CeruleanCave3_Text_LeafMeeting1:
@@ -121,7 +125,7 @@ CeruleanCave3_Text_LeafMeeting7:
 
 CeruleanCave3_EventScript_LeafBattle::
     trainerbattle_no_intro TRAINER_LEAF_HNS, CeruleanCave3_Text_LeafDefeat
-	end
+	call CeruleanCave3_EventScript_LeafBeat
 
 CeruleanCave3_Text_LeafDefeat:
 	.string "I lost! That was incredible!\p"
@@ -131,32 +135,24 @@ CeruleanCave3_EventScript_LeafBeat::
 	playbgm MUS_RG_SLOW_PALLET, FALSE 
 	playse SE_CONTEST_HEART
 	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_Heart
-	delay 20
+	delay 30
 	msgbox CeruleanCave3_Text_LeafBeat1, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
 	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, Common_Movement_ExclamationMark
-	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceUp
 	delay 20
+	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceAway
 	msgbox CeruleanCave3_Text_LeafBeat2, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	faceplayer
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFacePlayer
 	msgbox CeruleanCave3_Text_LeafBeat3, MSGBOX_DEFAULT
 	closemessage
-	delay 30
-	giveegg SPECIES_EEVEE, isShiny
-	call CeruleanCave3_EventScript_LeafAfterEgg
-
-CeruleanCave3_EventScript_LeafAfterEgg::
-	msgbox CeruleanCave3_Text_LeafEgg1, MSGBOX_DEFAULT	
-	applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceUp
-	delay 30
-	msgbox CeruleanCave3_Text_LeafEgg2, MSGBOX_DEFAULT
-	msgbox CeruleanCave3_Text_LeafEgg3, MSGBOX_DEFAULT
-    fadedefaultbgm
-	release
-	end
+	givemon SPECIES_EEVEE, 5, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, move1=MOVE_WISH, shinyMode=SHINY_MODE_ALWAYS
+	playbgm MUS_RG_CAUGHT_INTRO, FALSE
+	msgbox CeruleanCave3_Text_EeveeReceived, MSGBOX_DEFAULT
+	delay 50
+	call CeruleanCave3_EventScript_LeafAfterEevee
 
 CeruleanCave3_Movement_Heart:
 	emote_heart
@@ -173,15 +169,33 @@ CeruleanCave3_Text_LeafBeat1:
 CeruleanCave3_Text_LeafBeat2:
 	.string "Nope!\p"
 	.string "My secret!\p"
-	.string "But I can tell you one thing:\n"
-	.string "Even if I told you, you probably\l"
-	.string "toppled them already!$"
+	.string "But I can tell you one thing.\p"
+	.string "Even if I told you:$"
 
 CeruleanCave3_Text_LeafBeat3:
+	.string "you probably toppled them already!\p"
 	.string "Here!\p"
-	.string "You deserve this!$"
+	.string "I just hatched this EEVEE,\n"
+	.string "but I think you deserve this!$"
 
-CeruleanCave3_Text_LeafEgg1:
+CeruleanCave3_Text_EeveeReceived:
+	.string "{PLAYER} received EEVEE!$"
+
+CeruleanCave3_EventScript_LeafAfterEevee:: 
+	msgbox CeruleanCave3_Text_LeafEevee1, MSGBOX_DEFAULT	
+	closemessage
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFaceAway
+	delay 30
+	msgbox CeruleanCave3_Text_LeafEevee2, MSGBOX_DEFAULT
+	closemessage
+    applymovement2 LOCALID_CERLUEANCAVE3_LEAF, CeruleanCave3_Movement_LeafFacePlayer
+	delay 30
+	msgbox CeruleanCave3_Text_LeafEevee3, MSGBOX_DEFAULT
+    fadedefaultbgm
+	release
+	end
+
+CeruleanCave3_Text_LeafEevee1:
 	.string "You know.\p"
 	.string "It's not just being the\n"
 	.string "KANTO CHAMPION that I'm seeing.\p"
@@ -197,20 +211,59 @@ CeruleanCave3_Text_LeafEgg1:
 	.string "You probably knew someone like\n"
 	.string "that in your journey, right?$"
 
-CeruleanCave3_Text_LeafEgg2:
+CeruleanCave3_Text_LeafEevee2:
 	.string "We walk our own paths.\p"
 	.string "It can get lonely.\p"
-	.string "But not only do we have our\l"
+	.string "But not only do we have our\n"
 	.string "POKéMON...\p"
 	.string "We also have long-lasting\n"
 	.string "connections with the people\l"
 	.string "we bond with.\p"
 	.string "Even if we're apart.$"
 
-CeruleanCave3_Text_LeafEgg3:
+CeruleanCave3_Text_LeafEevee3:
 	.string "So...\p"
 	.string "I'm down for another match\n"
 	.string "next time you stop by!$"
+
+CeruleanCave3_EventScript_LeafRematch::
+	lock
+	playbgm MUS_RG_SLOW_PALLET, FALSE
+	faceplayer
+	msgbox CeruleanCave3_Text_LeafRematchRequest, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, FALSE, CeruleanCave3_EventScript_RematchLeafDeclined
+	call CeruleanCave3_EventScript_RematchLeafBattle
+
+CeruleanCave3_Text_LeafRematchRequest:
+	.string "Hey there, {PLAYER}!\p"
+	.string "This cave is a great spot\n"
+	.string "for training!\p"
+	.string "Up for a rematch? Got something\n"
+	.string "nice you could use if you win!$"
+
+CeruleanCave3_EventScript_RematchLeafDeclined:
+    closemessage
+    fadedefaultbgm
+	release
+	end
+
+CeruleanCave3_EventScript_RematchLeafBattle::
+	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, FALSE
+	msgbox CeruleanCave3_Text_RematchLeafChallengeAccepted, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_LEAF_HNS, CeruleanCave3_Text_LeafDefeat
+	msgbox CeruleanCave3_Text_RematchLeafDefeated, MSGBOX_DEFAULT
+	giveitem ITEM_MAX_REVIVE, 1
+	closemessage
+	release
+	end
+
+CeruleanCave3_Text_RematchLeafChallengeAccepted:
+	.string "This time, I'll win!$"
+
+CeruleanCave3_Text_RematchLeafDefeated:
+	.string "Here, as promised!\p"
+	.string "Let's battle again soon!$"
+
 
 
 
