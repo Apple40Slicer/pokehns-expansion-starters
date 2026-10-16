@@ -86,7 +86,7 @@ SouthernIsland_Exterior_hns_Text_BrendanMeeting1:
 	.string ".........................$"
 
 SouthernIsland_Exterior_hns_Text_BrendanMeeting2:
-	.string "Hey...! I know you!\n"
+	.string "???: Hey...! I know you!\n"
 	.string "You're the new KANTO CHAMPION\l"
 	.string "I keep hearing about!\p"
 	.string "Yeah, news like that even spreads\n"
@@ -282,7 +282,7 @@ SouthernIsland_Exterior_hns_EventScript_BrendanRematch::
 	call SouthernIsland_Exterior_hns_EventScript_RematchBrendanBattle
 
 SouthernIsland_Exterior_hns_Text_BrendanRematchRequest:
-	.string "{PLAYER}!\p"
+	.string "BRENDAN: {PLAYER}!\p"
 	.string "How have you been holding up?\p"
 	.string "Well, we could do away with\n"
 	.string "the small talk if a rematch\l"
